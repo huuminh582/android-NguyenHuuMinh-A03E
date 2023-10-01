@@ -1,6 +1,7 @@
 package com.example.lab1_login
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -55,8 +56,12 @@ class Logindemo:ComponentActivity() {
         mAuth.signInWithEmailAndPassword(email, pass).addOnCompleteListener { task ->
             if (task.isSuccessful) {
                 Toast.makeText(this, "Đăng nhập thành công", Toast.LENGTH_SHORT).show()
+                //val intent = Intent(this, MainActivity::class.java)
+                //startActivity(intent)
+
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
+
             } else {
                 Toast.makeText(this, "Đăng nhập không thành công", Toast.LENGTH_SHORT).show()
             }
